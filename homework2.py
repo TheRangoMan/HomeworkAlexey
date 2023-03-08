@@ -34,18 +34,27 @@ def getBeastByName(beasts, name):
     beast = list(filter(lambda beast: beast["Имя"] == name, beasts))[0]
     return beast
 
-def addPhrase(beasts, name):
+#def addPhrase(beasts, name,phrase):
+    """
     if name == "Лосяш":
         beasts[0]["Фраза"] = "Хрю"
     elif name == "Копатыч":
         beasts[1]["Фраза"] = " "
     return beasts    
+    """
+    
+def colorChange(beasts,name,color):
+    getDictsByKeyValue(beasts, "Имя", name)[0]["Цвет"] = color
+    
+    
+def addSerie(beasts, name, serie):
+    getDictsByKeyValue(beasts, "Имя", name)[0]["Серии"].append(serie)
+    
+def delSerie(beasts, name, serie):
+    getDictsByKeyValue(beasts, "Имя", name)[0]["Серии"].remove(serie)
 
-def seriesRemove(beasts,name):
-    if name == "Лосяш":
-        beasts[0]['Серии'].remove('Герой Плутона')
-        return beasts
-
+lp = "Любимая фраза"
+newcolor = "Светло-коричневый"
 
 beasts = list()
 
@@ -65,8 +74,14 @@ beasts.append({
 #print(beasts)
 #print(getBeastByName(beasts,"Лосяш"))
 
+#getBeastByName(beasts,"Лосяш")[lp] = "Святые угодники!"
+#getBeastByName(beasts,"Копатыч")[lp] = "Тысяча чертей!"
 
-#print(addPhrase(beasts,"Лосяш"))
+colorChange(beasts,"Копатыч","Светло-коричневый")
+print(beasts)
 
-print(seriesRemove(beasts,"Лосяш"))
+
+
+
+
         
