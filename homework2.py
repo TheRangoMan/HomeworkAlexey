@@ -26,6 +26,10 @@
 # Создавайте )
 # deleteBeast(omg,'Копатыч')
 
+def getDictsByKeyValue(dicts, key, value):
+    dictsres = list(filter(lambda dict: dict[key] == value, dicts))
+    return dictsres
+
 def getBeastByName(beasts, name):
     beast = list(filter(lambda beast: beast["Имя"] == name, beasts))[0]
     return beast
