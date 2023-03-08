@@ -53,6 +53,12 @@ def addSerie(beasts, name, serie):
 def delSerie(beasts, name, serie):
     getDictsByKeyValue(beasts, "Имя", name)[0]["Серии"].remove(serie)
 
+def addBeast(beasts):
+    beasts.append({
+        "Имя": "Сом",
+        "Цвет": "Серый",
+        "Серии": [ "Бабочка"]})
+    
 lp = "Любимая фраза"
 newcolor = "Светло-коричневый"
 
@@ -78,6 +84,7 @@ beasts.append({
 #getBeastByName(beasts,"Копатыч")[lp] = "Тысяча чертей!"
 
 colorChange(beasts,"Копатыч","Светло-коричневый")
+addBeast(beasts)
 print(beasts)
 
 
