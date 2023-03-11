@@ -9,18 +9,13 @@ with open ("C:\\Users\\Alexey\\Desktop\\Python 2.0\\HomeworkAlexey\\homework4\\a
 #print(words)
 
 
-
-
-
-
-'''
 with open ("worldList.txt","w") as f:
      f.write(str(words))
      pass
-'''
 
 
-word_counts = {}
+word_counts ={}
+
 for word in words:
     if word in word_counts:
         word_counts[word] += 1
@@ -28,10 +23,7 @@ for word in words:
         word_counts[word] = 1
 
 
-#print("Количество уникальных слов:", len(word_counts))
+print("Количество уникальных слов:", len(word_counts))
 
 
-#print("Словарь уникальных слов и количества повторений:", word_counts)
-
-
-
+print("Словарь уникальных слов и количества повторений:", word_counts)
