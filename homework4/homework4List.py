@@ -15,5 +15,3 @@ with open("numbers.txt","w",) as file:
 red = reduce(lambda x,y: x+y,numbers)
 
 print(red)
-
-
