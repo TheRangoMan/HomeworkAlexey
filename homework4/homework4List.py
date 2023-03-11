@@ -6,12 +6,14 @@
 from functools import reduce
 
 
-newlist = (list([x for x in range(1,10_001)]))
+numbers = [ x for x in range(1,10_001)]
 
-#with open("newlist.txt","w") as file:
- #   file.write(newlist)
+with open("numbers.txt","w",) as file:
+        file.write(str(numbers))
     
 
-red = reduce(lambda x,y: x+y,newlist)
+red = reduce(lambda x,y: x+y,numbers)
 
 print(red)
+
+
