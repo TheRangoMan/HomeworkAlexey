@@ -23,3 +23,12 @@ class Restaurant():
     def open_restaurant(self):
         
         return "Ресторан открыт"
+    
+
+restaurant = Restaurant('Rosseta', 'pizza and pasta' )
+
+print(restaurant.describe_restaurant_name()) 
+print(restaurant.describe_restaurant_cuisine())
+print('Название ресторана и кухня: ',restaurant.describe_restaurant()) 
+print(restaurant.open_restaurant()) 
+print(restaurant.describe_restaurant(), restaurant.open_restaurant())  
