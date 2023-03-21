@@ -20,11 +20,14 @@ class Restaurant():
         cuisine_rest = f"Кухня в ресторане: {self.cuisine_type}"
         return cuisine_rest.title()
 
+    def __str__(self) -> str:
+        return f"Название ресторана: {self.restaurant_name} Кухня в ресторане: {self.cuisine_type}"
+    
     def open_restaurant(self):
         
         return "Ресторан открыт"
     
-
+"""
 restaurant = Restaurant('Rosseta', 'pizza and pasta' )
 
 print(restaurant.describe_restaurant_name()) 
@@ -32,3 +35,4 @@ print(restaurant.describe_restaurant_cuisine())
 print('Название ресторана и кухня: ',restaurant.describe_restaurant()) 
 print(restaurant.open_restaurant()) 
 print(restaurant.describe_restaurant(), restaurant.open_restaurant())  
+"""
