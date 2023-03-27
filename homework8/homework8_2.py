@@ -1,23 +1,13 @@
-"""
-1 попробуйте сделать textdata на циклах
-2 сделайте createresult на dictionaty comprehension
-[ x for x in range(9)]
-[ x: x+2 for x in range(9) ]
-3 обработка исключений!
-    там где могут быть ошибки exception мы их обрабатываем и в класс добавляем параметры
-    errorFlag (True|False)
-    errorMessage (str - расшифровка ошибки)
-"""
+#сделайте createresult на dictionaty comprehension
 
 
 
-
-#попробуйте сделать textdata на циклах
 
 from itertools import groupby
+from pprint import pprint
 
 
-class Textdata():
+class  Textdata():
     
     def __init__(self) -> None:
         self.data=[]
@@ -36,10 +26,9 @@ class Textdata():
             "NOV": 11,
             "DEC": 12
         }
-        
-    def readfile(self,filename):
+    def readfile(self, filename:str):
         try:
-            with open(filename, "r") as file:
+            with open(filename, "t+r") as file:
                 for line in file.readlines():
                     l = []
                     for word in line.split():
@@ -50,6 +39,10 @@ class Textdata():
             print('file not found!')
         return self
     
+    def sortmonths(self, l):
+        l.sort(key = lambda x: self.calendar[x[1]])
+        return l
+    '''
     def createresult(self):
         self.map = dict(
             map(
@@ -60,18 +53,34 @@ class Textdata():
             )
         )
         return self
+    '''
+    def creatresult(self):
+        
+        
+        
+        
+        
+        
+    def maxmonth(self, year):
+        #month = max(self.map[year], key=lambda x: self.map[year][x])
+        month = max(self.map[year].items(), key=lambda x: x[1])
+        return month
     
-     
-    def sortmonths(self,l):
-         n = len(l)
-         for i in range(n):
-            for j in range(0,n-i-1):
-                if self.calendar[l[j][1]] > self.calendar[l[j+1][1]]:
-                    l[j], l[j+1] = l[j+1], l[j]
-         return n
-
+    def sumyear(self, year):
+        sum = 0
+        for _, y in self.map[year].items():
+            sum += y
+        return sum
+    
+    def maxyear(self):
+        year = max(self.map, key=self.sumyear)
+        return (year, self.sumyear(year))
+    
+    def maxincome(self):
+        year = max(self.map,key=lambda x: self.maxmonth(x)[1])
+        t = self.maxmonth(year)
+        return (year, t[0], t[1])
 
 t = Textdata().readfile('HomeworkAlexey\\homework8\\input.txt').createresult()
-
-print(t.sortmonths)
  
+print(t.createresult())
