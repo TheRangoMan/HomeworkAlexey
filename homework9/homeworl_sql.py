@@ -13,4 +13,3 @@ cursor.close()
 
 pprint(result)
 
-with open('')
