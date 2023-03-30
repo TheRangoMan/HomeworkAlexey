@@ -6,3 +6,14 @@ print("".join(numbers))
 
 dict = {'abc': 1, 'bcd': 3, 'cde': 5}
 print({k.upper(): v**2 for (k, v) in dict.items()})
+
+x = "5"
+try:
+    total = 5 - x
+    print("Passed")
+except:
+    print("Language: ", end="")
+else:
+    print("Java")
+finally:
+    print("Python")
