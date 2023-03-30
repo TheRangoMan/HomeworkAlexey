@@ -70,6 +70,3 @@ class  Textdata():
         return (year, t[0], t[1])
     
 
-t = Textdata().readfile('').createresult()
-pprint(t.maxincome())
-pprint(t.map)
