@@ -12,3 +12,5 @@ result = cursor.fetchall()
 cursor.close()
 
 pprint(result)
+
+with open('')

@@ -1,4 +1,5 @@
 from itertools import groupby
+from pprint import pprint
 
 
 class  Textdata():
@@ -67,3 +68,8 @@ class  Textdata():
         year = max(self.map,key=lambda x: self.maxmonth(x)[1])
         t = self.maxmonth(year)
         return (year, t[0], t[1])
+    
+
+t = Textdata().readfile('').createresult()
+pprint(t.maxincome())
+pprint(t.map)
