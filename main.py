@@ -17,3 +17,18 @@ else:
     print("Java")
 finally:
     print("Python")
+    
+
+word = "Machine Learning"
+text = word.split()
+print(text)
+print("".join([i[0].upper() for i in text]))
+
+def check(word):
+    if word:
+        return True
+    return False
+
+words = ["home", "", "pen", None, "Nick"]
+
+print(list(filter(check, words)))
