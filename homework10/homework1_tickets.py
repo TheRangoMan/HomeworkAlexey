@@ -7,12 +7,12 @@ import random
 mydb = mysql.connector.connect(
     host='localhost', user='user2064', password='!QA2ws3ed')
 cursor = mydb.cursor()
-query = "insert into db2064.myrecords (summa) values "
+query = "insert into tickets.ticket_line,  "
 nonfirst = False
 
 
 
-ticket_numbers = [i for i in range(1, 101)]
+ticket_numbers = [i for i in range(1, 1000001)]
 
 
 ticket_lines = [(i, j) for i in ticket_numbers for j in range(1, 6)]
@@ -29,6 +29,6 @@ for i, ticket_line in enumerate(ticket_lines):
 ticket_line_sql = " ".join(ticket_line_inserts)
 ticket_line_numbers_sql = " ".join(ticket_line_numbers_inserts)
 
-print(ticket_line_sql)
-print(ticket_line_numbers_sql)
+#print(ticket_line_sql)
+#print(ticket_line_numbers_sql)
 
