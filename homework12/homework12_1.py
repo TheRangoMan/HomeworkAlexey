@@ -14,6 +14,19 @@ def quicksort(arr):
     return quicksort(smaller)+[pivot]+quicksort(larger)
 
 
+def partition(array, low, high):
+    pivot = random.randint(low, high)
+    array[pivot], array[high] = array[high], array[pivot]
+    i = low - 1
+    for j in range(low, high):
+        # если текущий элемент меньше или равен опорному
+        if array[j] <= array[high]:
+            i += 1
+            array[i], array[j] = array[j], array[i]
+    #  первый элемент больше pivot меняем с ним местами
+    array[i+1], array[high] = array[high], array[i+1]
+    return i+1
+
 def quicksortplanar(array):
     stack = [(0, len(array)-1)]
     # пока stack не пустой
@@ -28,19 +41,6 @@ def quicksortplanar(array):
         if high >= pivot + 1:
             stack.append((pivot+1, high))
    
-
-def partition(array, low, high):
-    pivot = random.randint(low, high)
-    array[pivot], array[high] = array[high], array[pivot]
-    i = low - 1
-    for j in range(low, high):
-        # если текущий элемент меньше или равен опорному
-        if array[j] <= array[high]:
-            i += 1
-            array[i], array[j] = array[j], array[i]
-    #  первый элемент больше pivot меняем с ним местами
-    array[i+1], array[high] = array[high], array[i+1]
-    return i+1
 
 
 def ordinarysort(arr):
