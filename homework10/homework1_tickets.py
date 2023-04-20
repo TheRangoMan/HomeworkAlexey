@@ -29,6 +29,6 @@ for i, ticket_line in enumerate(ticket_lines):
 ticket_line_sql = " ".join(ticket_line_inserts)
 ticket_line_numbers_sql = " ".join(ticket_line_numbers_inserts)
 
-#print(ticket_line_sql)
+print(ticket_line_sql)
 #print(ticket_line_numbers_sql)
 

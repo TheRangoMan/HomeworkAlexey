@@ -9,7 +9,7 @@ print({k.upper(): v**2 for (k, v) in dict.items()})
 
 x = "5"
 try:
-    total = 5 - x
+    total = x 
     print("Passed")
 except:
     print("Language: ", end="")
@@ -31,4 +31,13 @@ def check(word):
 
 words = ["home", "", "pen", None, "Nick"]
 
-print(list(filter(check, words)))
+#print(list(filter(check, words)))
+
+def sum(n):
+    if n == 1:
+        return 1
+    else:
+        return n + sum(n-1)
+
+
+print(sum(4))

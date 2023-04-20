@@ -39,7 +39,7 @@ def quicksortplanar(array):
         if low < pivot - 1:
             stack.append((low, pivot-1))
         if high >= pivot + 1:
-            stack.append((pivot+1, high))
+            stack.append((pivot + 1, high)) # type: ignore
    
 
 
@@ -76,6 +76,6 @@ def quicksort_reverse(arr):
         return quicksort_reverse(larger) + [pivot] + quicksort_reverse(smaller)
 
 
-l = [3, 5, 4, 7, 12, 34, 2, 1]
+l =  [random.randint(1, 450) for _ in range(1000)]
 sorted_list = quicksort_reverse(l)
 print(sorted_list)
