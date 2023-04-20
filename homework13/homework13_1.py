@@ -1,5 +1,19 @@
+import copy
 from pprint import pprint
 
+def route(a, b):
+    if a == b :
+        return
+    for i in range(le):
+        if i == a or i == b :
+            continue
+        if not links[a][i]:
+            continue
+        if themap[a][i] + themap[i][b] == themap[a][b]:
+            routes.append(i+1)
+            route(i,b)
+            break
+    
 
 themap = [
     [0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -13,8 +27,10 @@ themap = [
     [0, 0, 0, 0, 0, 0, 0, 5, 0, 0],
     [0, 0, 0, 0, 7, 0, 0, 0, 0, 0]
 ]
-"""
-themap = [
+
+links = copy.deepcopy(themap)
+
+""" themap = [
     [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 0, 1, 0, 0, 1, 0, 0, 0, 0],
     [0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
@@ -25,12 +41,17 @@ themap = [
     [0, 0, 0, 0, 1, 0, 1, 0, 1, 0],
     [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
     [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
-] 
-"""
+] """
+
 le = len(themap)
+
+routes = []
+
+    
+pprint(routes)
 for a in range(le):
     for b in range(le):
-        if a == b:
+        if a == b or not themap[a][b]:
             continue
         for c in range(le):
             if c == b or c == a:
@@ -40,8 +61,9 @@ for a in range(le):
                 if themap[a][c] > d or not themap[a][c]:
                     themap[a][c] = d
                     themap[c][a] = d
-                 
+
+
+
 pprint(themap) 
-
-
-
+route(1,9)
+pprint(routes)

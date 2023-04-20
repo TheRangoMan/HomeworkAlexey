@@ -11,7 +11,7 @@ mycursor = mydb.cursor()
 
 
 
-fig, axs = plt.subplots(3, 1, figsize=(8, 12))
+fig, axs = plt.subplots(3, 1, figsize=(12, 20))
 
 mycursor.execute("SELECT year,month,income,business FROM db2064.finances WHERE business=1 ")
 result1 = mycursor.fetchall()
