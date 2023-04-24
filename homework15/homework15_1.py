@@ -21,6 +21,7 @@ class Database():
         self.user=user,
         self.password=password,
         self.database=database
+        
 
     
     def execute(self, query, params=None):
