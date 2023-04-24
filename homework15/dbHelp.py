@@ -3,7 +3,7 @@ import mysql.connector
 class DataHelp:
     
     def __init__(self):
-        self.find = mysql.connector.connect(host="localhost", user="vbm", password="!QA2ws3ed")
+        self.find = mysql.connector.connect(host="localhost", user="user2064", password="!QA2ws3ed")
         #self.replace_data
         #self.replace_condition
         #self.replace_query
