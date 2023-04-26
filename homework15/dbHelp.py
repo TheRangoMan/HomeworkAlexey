@@ -9,11 +9,11 @@ class DataHelp:
         #self.replace_query
         
     def replace_data_set(self, **kwargs):
-        self.replace_data_set = kwargs
+        self.replace_data_set_args = kwargs
         return self
 
     def replace_condition_set( self, **kwargs):
-        self.replace_condition_set = kwargs
+        self.replace_condition_set_args = kwargs
         return self
     
     def extract_parameters(self, args: dict):
@@ -24,10 +24,10 @@ class DataHelp:
     
     def replace_with_data_and_condition(self):
         query = f'update db2064.train set '
-        l = self.extract_parameters(self.replace_data_set)    
+        l = self.extract_parameters(self.replace_data_set_args)    
         query += ', '.join(l)
         query += " where "
-        l = self.extract_parameters(self.replace_condition_set)    
+        l = self.extract_parameters(self.replace_condition_set_args)    
         query += ' and '.join(l)
         self.execute_some_query(query)
         self.find.commit()
@@ -45,7 +45,7 @@ class DataHelp:
             return r
         except:
             cursor.close()
-            return 
+            return []
     
     def replace_data(self, year, month, business, income):
         query = f"update db2064.train set income={income} where year={year} and business={business} and month={month}"
