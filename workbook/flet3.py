@@ -43,7 +43,7 @@ def main(page:Page):
     textStartLabel = Text('Enter start value', size=30)
     startx = TextField(value=" ",text_size=30)
     
-    textEndLabel = Text('Enter start value', size=30)
+    textEndLabel = Text('Enter end value', size=30)
     endx = TextField(value=" ", text_size=30)
     
     rowf = Row([text,func, buttonstart])
