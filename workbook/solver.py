@@ -36,7 +36,7 @@ def solve(pattern):
 
 # здесь мы ищем указатели на мет функции или возвращаем число если никаких функций нет
 def mathOperator(pattern):
-    sum = 0.0
+    summa = 0.0
     parts=pattern.split('(')
     operat = parts[0]
     sw = switchOperator(operat)
@@ -44,31 +44,31 @@ def mathOperator(pattern):
     if sw == 1:
         if l > 1:
             pattern = pattern[1:]
-        sum += math.exp(1)
+        summa += math.exp(1)
     if sw == 2:
-        sum += math.sin(math.radians(solve(pattern[4:l-1])))
+        summa += math.sin(math.radians(solve(pattern[4:l-1])))
     if sw == 3:
-        sum += math.cos(math.radians(solve(pattern[4:l-1])))
+        summa += math.cos(math.radians(solve(pattern[4:l-1])))
     if sw == 4:
         ind = indexOfCharacter(';', pattern[4:l-1])+4
-        sum += math.pow(solve(pattern[4:ind]),solve(pattern[ind+1:l-1]))
+        summa += math.pow(solve(pattern[4:ind]),solve(pattern[ind+1:l-1]))
     if sw == 5:
-        sum = math.sqrt(solve(pattern[5:l-1]))
+        summa = math.sqrt(solve(pattern[5:l-1]))
     if sw == 6:
-        sum = math.log(solve(pattern[3:l-1]))
+        summa = math.log(solve(pattern[3:l-1]))
     if sw == 7:
-        sum = math.log10(solve(pattern[3:l-1]))
+        summa = math.log10(solve(pattern[3:l-1]))
     if sw == 8:
-        sum = math.abs(solve(pattern[4:l-1]))
+        summa = math.abs(solve(pattern[4:l-1]))
     if sw == 9:
         ind = indexOfCharacter(';', pattern[4:l-1])+5
-        sum = math.max(solve(pattern[:ind]),solve(pattern[ind+1:l-1]))
+        summa = math.max(solve(pattern[:ind]),solve(pattern[ind+1:l-1]))
     if sw == 10:
-        sum = math.exp(solve(pattern[4:l-1]))
+        summa = math.exp(solve(pattern[4:l-1]))
     if sw == 0:
-        sum = float(pattern)    
+        summa = float(pattern)    
     
-    return sum
+    return summa
 
     
 # остаток от логики в другом языке - возвращаем номер мат функции

@@ -28,6 +28,7 @@ def main(page: Page):
             page.clean()
             page.add(column)
             page.update()
+            
         except Exception as ex:
             column = Column([
                 rowf,
@@ -37,6 +38,7 @@ def main(page: Page):
             page.clean()
             page.add(column)
             page.update()
+            
         
     
     text = Text('Enter you function with variable as @x', size=30)
@@ -55,4 +57,6 @@ def main(page: Page):
     column = Column([rowf, rowrange])
     page.add(column)
     
+    
 ft.app(target=main)
+
