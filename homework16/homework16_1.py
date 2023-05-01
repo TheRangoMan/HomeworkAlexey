@@ -4,18 +4,6 @@ import mysql.connector
 from mysql.connector import cursor
 from dbHelp import DataHelp
 
-class ChechYearandMonth:
-    
-    def __init__(self,year,month):
-        self.year = year
-        self.month = month
-    
-    def checkdate(self):
-        if self.year < 1970 or self.year > 2050:
-            return False
-        if self.month < 1 or self.month > 12:
-            return False
-        return True
 
 
 dataHelp = DataHelp()
@@ -44,13 +32,7 @@ while True:
     business = inputImp('Enter business:')
     income = inputImp('Enter income')
     
-validator = ChechYearandMonth(year, month)
 
-
-if validator.checkdate():
-    print("Дата корректна.")
-else:
-    print("Дата некорректна.")
     
     if dataHelp.checkExist(year,month,business):
         print('We already have a record for those business and date')

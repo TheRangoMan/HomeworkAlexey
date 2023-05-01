@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import turtle
+
 
 
 x = list(range(-100,101))
