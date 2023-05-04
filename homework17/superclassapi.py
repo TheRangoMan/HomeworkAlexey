@@ -24,3 +24,4 @@ class GetFromApi():
     
     def GetResultAsDict(self):
         return dict(self.result.json())
+    
